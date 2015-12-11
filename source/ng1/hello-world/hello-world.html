@@ -8,6 +8,7 @@
     </h3>
     <div>
       <span ng-repeat="header in helloWorldCtrl.gridHeaders" style="padding: 0 5px;">{{header}}</span>
+      <button ng-click="helloWorldCtrl.reverseOrder()">Reverse</button>
     </div>
     <div ux-datagrid="helloWorldCtrl.grid"
         style="height: 200px; overflow-x: hidden;"

@@ -42,4 +42,8 @@ export class Grid {
     updateText($event) {
         this.hwService.updateText($event.target.value);
     }
+
+    reverseOrder() {
+        this.grid.reverse();
+    }
 }

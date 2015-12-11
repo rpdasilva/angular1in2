@@ -40,4 +40,8 @@ export default class HelloWorldController {
     updateText($event) {
         this.helloWorldService.updateText($event.target.value);
     }
+
+    reverseOrder() {
+        this.grid.reverse();
+    }
 }

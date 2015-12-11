@@ -9,6 +9,7 @@
     <table>
         <thead>
             <th *ng-for="#column of gridHeaders">{{column}}</th>
+            <th><button (click)="reverseOrder()">Reverse</button></th>
         </thead>
     </table>
     <div style="height: 200px; overflow-x: hidden;">
