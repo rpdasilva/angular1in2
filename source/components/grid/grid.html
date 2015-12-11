@@ -11,14 +11,14 @@
         </h3>
         <table style="width: 100%; padding: 0.25em; background-color: #EEE">
             <thead>
-                <th *ng-for="#column of gridHeaders">{{column}}</th>
+                <th *ngFor="#column of gridHeaders">{{column}}</th>
                 <th><button (click)="reverseOrder()">Reverse Order</button></th>
             </thead>
         </table>
         <div style="height: 200px; overflow-x: hidden;">
             <table>
-                <tr *ng-for="#row of filteredGrid">
-                    <td *ng-for="#cell of gridHeaders">{{row[cell]}}</td>
+                <tr *ngFor="#row of filteredGrid">
+                    <td *ngFor="#cell of gridHeaders">{{row[cell]}}</td>
                 </tr>
             </table>
         </div>

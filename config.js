@@ -33,11 +33,11 @@ System.config({
 
   map: {
     "angular": "npm:angular@1.4.8",
-    "angular2": "npm:angular2@2.0.0-alpha.48",
+    "angular2": "npm:angular2@2.0.0-alpha.52",
     "es6-shim": "github:es-shims/es6-shim@0.33.6",
     "obogo/ux-angularjs-datagrid": "github:obogo/ux-angularjs-datagrid@1.4.5",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
-    "rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.11",
+    "rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.14",
     "todomvc-app-css": "npm:todomvc-app-css@2.0.1",
     "todomvc-common": "npm:todomvc-common@1.0.2",
     "typescript": "npm:typescript@1.6.2",
@@ -90,16 +90,18 @@ System.config({
     "github:obogo/ux-angularjs-datagrid@1.4.5": {
       "angular": "github:angular/bower-angular@1.4.8"
     },
-    "npm:@reactivex/rxjs@5.0.0-alpha.11": {
+    "npm:@reactivex/rxjs@5.0.0-alpha.14": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "module": "github:jspm/nodelibs-module@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:angular2@2.0.0-alpha.48": {
+    "npm:angular2@2.0.0-alpha.52": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
+      "es6-promise": "npm:es6-promise@3.0.2",
+      "es6-shim": "npm:es6-shim@0.33.13",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "reflect-metadata": "npm:reflect-metadata@0.1.2",
-      "rxjs": "npm:rxjs@5.0.0-alpha.11",
+      "rxjs": "npm:rxjs@5.0.0-alpha.14",
       "zone.js": "npm:zone.js@0.5.8"
     },
     "npm:angular@1.4.8": {
@@ -241,6 +243,9 @@ System.config({
     "npm:es6-promise@3.0.2": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
+    "npm:es6-shim@0.33.13": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:evp_bytestokey@1.0.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "create-hash": "npm:create-hash@1.1.2",
@@ -315,7 +320,7 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:rxjs@5.0.0-alpha.11": {
+    "npm:rxjs@5.0.0-alpha.14": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },

@@ -24,7 +24,7 @@ export class Grid {
     private hwService: HelloWorldService;
 
     constructor(private peopleService: PeopleService) {
-        this.hwService = window.angular.element(document.body).injector().get('helloWorldService');
+        this.hwService = window.angular.element(document).injector().get('helloWorldService');
         this.hwService.helloWorld('NG2');
         this.store = this.hwService.getStore();
 
