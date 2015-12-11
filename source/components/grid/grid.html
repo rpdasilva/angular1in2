@@ -1,23 +1,30 @@
 <div>
-    <h1>NG2</h1>
-    <h2>NgFor</h2>
-    <h3>
-        Foo: {{store.foo}}
-        <button (click)="toggleFoo()">toggleFoo</button>
-        <input (keyup)="updateText($event)" value="{{store.text}}"> {{store.text}}
-    </h3>
-    <table>
-        <thead>
-            <th *ng-for="#column of gridHeaders">{{column}}</th>
-            <th><button (click)="reverseOrder()">Reverse</button></th>
-        </thead>
-    </table>
-    <div style="height: 200px; overflow-x: hidden;">
-        <table>
-            <tr *ng-for="#row of grid">
-                <td *ng-for="#cell of gridHeaders">{{row[cell]}}</td>
-            </tr>
+    <div style="border: 1px solid #000; padding: 1em;">
+        <h1 style="margin-top: 0">NG2</h1>
+        <h2>NgFor</h2>
+        <h3>
+            Foo: {{store.foo}}
+            <button (click)="toggleFoo()">toggleFoo</button>
+            <input (keyup)="updateText($event)" value="{{store.text}}" placeholder="Filter">
+            <span>{{store.text}}:</span>
+            <span>Length {{filteredGrid ? filteredGrid.length : 0}}</span>
+        </h3>
+        <table style="width: 100%; padding: 0.25em; background-color: #EEE">
+            <thead>
+                <th *ng-for="#column of gridHeaders">{{column}}</th>
+                <th><button (click)="reverseOrder()">Reverse Order</button></th>
+            </thead>
         </table>
+        <div style="height: 200px; overflow-x: hidden;">
+            <table>
+                <tr *ng-for="#row of filteredGrid">
+                    <td *ng-for="#cell of gridHeaders">{{row[cell]}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div style="border: 1px solid #000; padding: 1em; margin-top: 1em">
+            <hello-world [grid]="filteredGrid" [gridHeaders]="gridHeaders"></hello-world>
+        </div>
     </div>
-    <hello-world [grid]="grid" [gridHeaders]="gridHeaders"></hello-world>
 </div>

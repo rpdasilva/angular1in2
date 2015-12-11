@@ -4,7 +4,7 @@ export default class HelloWorldService {
     constructor() {
         this.store = {
             foo: true,
-            text: 'Lorem ipsum'
+            text: ''
         };
     }
 

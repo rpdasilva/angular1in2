@@ -1,14 +1,15 @@
 <div>
-    <h1>NG1: {{helloWorldCtrl.message}}</h1>
+    <h1 style="margin-top: 0">NG1: {{helloWorldCtrl.message}}</h1>
     <h2>UX Datagrid</h2>
     <h3>
         Foo: {{helloWorldCtrl.store.foo}}
         <button ng-click="helloWorldCtrl.toggleFoo()">toggleFoo</button>
-        <input ng-keyup="helloWorldCtrl.updateText($event)" ng-value="helloWorldCtrl.store.text"> {{helloWorldCtrl.store.text}}
+        {{helloWorldCtrl.store.text}}:
+        Length {{helloWorldCtrl.grid.length}}
     </h3>
-    <div>
-      <span ng-repeat="header in helloWorldCtrl.gridHeaders" style="padding: 0 5px;">{{header}}</span>
-      <button ng-click="helloWorldCtrl.reverseOrder()">Reverse</button>
+    <div style="display: table; width: 100%; font-weight: 700; padding: 0.25em; background-color: #EEE">
+      <span ng-repeat="header in helloWorldCtrl.gridHeaders" style="display: table-cell; padding: 0 5px;">{{header}}</span>
+      <button ng-click="helloWorldCtrl.reverseOrder()">Reverse Order</button>
     </div>
     <div ux-datagrid="helloWorldCtrl.grid"
         style="height: 200px; overflow-x: hidden;"

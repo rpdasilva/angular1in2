@@ -19,6 +19,7 @@ import HelloWorldService from '../../ng1/hello-world/hello-world.service';
 export class Grid {
     private gridHeaders: Array<string>;
     private grid: Array<any>;
+    private filteredGrid: Array<any>;
     private store: any;
     private hwService: HelloWorldService;
 
@@ -32,6 +33,7 @@ export class Grid {
             .subscribe(data => {
                 this.gridHeaders = Object.keys(data[0]);
                 this.grid = data;
+                this.filteredGrid = data;
             });
     }
 
@@ -40,10 +42,17 @@ export class Grid {
     }
 
     updateText($event) {
-        this.hwService.updateText($event.target.value);
+        var text = $event.target.value;
+        this.hwService.updateText(text);
+
+        if(text.length) {
+            this.filteredGrid = this.grid.filter(row => JSON.stringify(row).toLowerCase().indexOf(text.toLowerCase()) > -1);
+        } else {
+            this.filteredGrid = this.grid;
+        }
     }
 
     reverseOrder() {
-        this.grid.reverse();
+        this.filteredGrid.reverse();
     }
 }
