@@ -1,0 +1,15 @@
+<div>
+    <h1>NG1: {{helloWorldCtrl.message}}</h1>
+    <h2>UX Datagrid</h2>
+    <h3>
+        Foo: {{helloWorldCtrl.store.foo}}
+        <button ng-click="helloWorldCtrl.toggleFoo()">toggleFoo</button>
+        <input ng-keyup="helloWorldCtrl.updateText($event)" ng-value="helloWorldCtrl.store.text"> {{helloWorldCtrl.store.text}}
+    </h3>
+    <div>
+      <span ng-repeat="header in helloWorldCtrl.gridHeaders" style="padding: 0 5px;">{{header}}</span>
+    </div>
+    <div ux-datagrid="helloWorldCtrl.grid"
+        style="height: 200px; overflow-x: hidden;"
+        data-options="{templateModel:{templates:helloWorldCtrl.templates}}"></div>
+</div>

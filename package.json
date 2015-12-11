@@ -1,0 +1,23 @@
+{
+  "name": "angular1in2",
+  "scripts": {
+    "postinstall": "jspm install && tsd install"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "jspm": {
+    "dependencies": {
+      "angular": "npm:angular@^1.4.8",
+      "angular2": "npm:angular2@^2.0.0-alpha.48",
+      "es6-shim": "github:es-shims/es6-shim@^0.33.6",
+      "obogo/ux-angularjs-datagrid": "github:obogo/ux-angularjs-datagrid@^1.4.5",
+      "reflect-metadata": "npm:reflect-metadata@^0.1.2",
+      "rxjs": "npm:@reactivex/rxjs@5.0.0-alpha.11",
+      "ux-angularjs-datagrid": "npm:ux-angularjs-datagrid@^1.4.5",
+      "zone.js": "npm:zone.js@^0.5.8"
+    },
+    "devDependencies": {
+      "typescript": "npm:typescript@^1.6.2"
+    }
+  }
+}

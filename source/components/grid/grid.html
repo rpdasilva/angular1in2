@@ -1,0 +1,22 @@
+<div>
+    <h1>NG2</h1>
+    <h2>NgFor</h2>
+    <h3>
+        Foo: {{store.foo}}
+        <button (click)="toggleFoo()">toggleFoo</button>
+        <input (keyup)="updateText($event)" value="{{store.text}}"> {{store.text}}
+    </h3>
+    <table>
+        <thead>
+            <th *ng-for="#column of gridHeaders">{{column}}</th>
+        </thead>
+    </table>
+    <div style="height: 200px; overflow-x: hidden;">
+        <table>
+            <tr *ng-for="#row of grid">
+                <td *ng-for="#cell of gridHeaders">{{row[cell]}}</td>
+            </tr>
+        </table>
+    </div>
+    <hello-world [grid]="grid" [gridHeaders]="gridHeaders"></hello-world>
+</div>
