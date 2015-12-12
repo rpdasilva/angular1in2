@@ -6,17 +6,18 @@ export default class HelloWorldController {
 
     static get $inject() {
         return [
-            // 'peopleService',
+            'peopleService',
             'helloWorldService'
         ];
     }
 
     constructor(
-        // private peopleService,
+        private peopleService,
         private helloWorldService) {
 
         this.message = 'Hello World';
         this.store = helloWorldService.getStore();
+        this.peopleStore = peopleService.getStore();
         this.templates = [
             {
                 template: `
@@ -31,10 +32,15 @@ export default class HelloWorldController {
 
         console.log('helloWorldCtrl constructed');
         helloWorldService.helloWorld('NG1');
+        peopleService.logPeople();
     }
 
     toggleFoo() {
         this.helloWorldService.toggleFoo();
+    }
+
+    togglePeopleFoo() {
+        this.peopleService.toggleFoo();
     }
 
     updateText($event) {

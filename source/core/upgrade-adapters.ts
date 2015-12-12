@@ -1,5 +1,5 @@
 import {UpgradeAdapter} from 'angular2/upgrade';
 
-export var appNG1 = {
+export var ng1App = {
     adapter: appNG1Adapter = new UpgradeAdapter()
 };
