@@ -1,47 +1,49 @@
 import {Component, Inject} from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {ng1App} from '../../core/upgrade-adapters';
-import {PeopleService} from '../../core/people.service';
-import HelloWorldService from '../../ng1/hello-world/hello-world.service';
+import {ng1AppAdapter} from '../../core/ng-upgrade-adapters';
+import {Ag2Service} from '../../core/ag2.service';
+import {Ag1Service} from '../../angular1/ag1/ag1.service';
 
 @Component({
     selector: 'grid',
     directives: [
-        ng1App.adapter.upgradeNg1Component('helloWorld')
+        ng1AppAdapter.upgradeNg1Component('ag1')
     ],
-    templateUrl: '/source/components/grid/grid.html'
+    templateUrl: 'source/components/grid/grid.html',
+    styleUrls: ['source/components/grid/grid.css']
 })
 export class Grid {
-    private gridHeaders: Array<string>;
-    private grid: Array<any>;
-    private filteredGrid: Array<any>;
-    private store: any;
+    private gridHeaders: string[];
+    private grid: any[];
+    private filteredGrid: any[];
+    private ag1Store: any;
+    private ag2Store: any;
 
-    constructor(private peopleService: PeopleService, @Inject('helloWorldService') private helloWorldService: HelloWorldService) {
-        this.helloWorldService.helloWorld('NG2');
-        this.store = this.helloWorldService.getStore();
-        this.peopleStore = this.peopleService.getStore();
+    constructor(private ag2Service: Ag2Service, @Inject('ag1Service') private ag1Service: Ag1Service) {
+        this.ag1Service.helloWorld('Angular 2');
+        this.ag1Store = this.ag1Service.getStore();
+        this.ag2Store = this.ag2Service.getStore();
 
-        peopleService.getPeople()
-            .map(res => res.json())
-            .subscribe(data => {
+        ag2Service.getPeople()
+            .map((res: any) => res.json())
+            .subscribe((data: any) => {
                 this.gridHeaders = Object.keys(data[0]);
                 this.grid = data;
                 this.filteredGrid = data;
             });
     }
 
-    toggleFoo() {
-        this.helloWorldService.toggleFoo();
+    toggleAg1Foo() {
+        this.ag1Service.toggleAg1Foo();
     }
 
-    togglePeopleFoo() {
-        this.peopleService.toggleFoo();
+    toggleAg2Foo() {
+        this.ag2Service.toggleAg2Foo();
     }
 
-    updateText($event) {
-        var text = $event.target.value;
-        this.helloWorldService.updateText(text);
+    updateFilterText($event: KeyboardEvent) {
+        var text: string = $event.target.value;
+        this.ag1Service.updateFilterText(text);
 
         if(text.length) {
             this.filteredGrid = this.grid.filter(row => JSON.stringify(row).toLowerCase().indexOf(text.toLowerCase()) > -1);
