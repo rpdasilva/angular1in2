@@ -5,6 +5,8 @@
         <h3>
             Foo: {{store.foo}}
             <button (click)="toggleFoo()">toggleFoo</button>
+            People Foo: {{peopleStore.foo}}
+            <button (click)="togglePeopleFoo()">toggleFoo</button>
             <input (keyup)="updateText($event)" value="{{store.text}}" placeholder="Filter">
             <span>{{store.text}}:</span>
             <span>Length {{filteredGrid ? filteredGrid.length : 0}}</span>

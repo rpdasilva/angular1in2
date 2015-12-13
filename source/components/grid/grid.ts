@@ -1,18 +1,13 @@
-import {Component} from 'angular2/angular2';
+import {Component, Inject} from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {appNG1} from '../../core/upgrade-adapters';
+import {ng1App} from '../../core/upgrade-adapters';
 import {PeopleService} from '../../core/people.service';
 import HelloWorldService from '../../ng1/hello-world/hello-world.service';
 
 @Component({
     selector: 'grid',
     directives: [
-        appNG1.adapter.upgradeNg1Component('helloWorld')
-    ],
-    providers: [
-        HTTP_PROVIDERS,
-        PeopleService,
-        HelloWorldService
+        ng1App.adapter.upgradeNg1Component('helloWorld')
     ],
     templateUrl: '/source/components/grid/grid.html'
 })
@@ -21,12 +16,11 @@ export class Grid {
     private grid: Array<any>;
     private filteredGrid: Array<any>;
     private store: any;
-    private hwService: HelloWorldService;
 
-    constructor(private peopleService: PeopleService) {
-        this.hwService = window.angular.element(document).injector().get('helloWorldService');
-        this.hwService.helloWorld('NG2');
-        this.store = this.hwService.getStore();
+    constructor(private peopleService: PeopleService, @Inject('helloWorldService') private helloWorldService: HelloWorldService) {
+        this.helloWorldService.helloWorld('NG2');
+        this.store = this.helloWorldService.getStore();
+        this.peopleStore = this.peopleService.getStore();
 
         peopleService.getPeople()
             .map(res => res.json())
@@ -38,12 +32,16 @@ export class Grid {
     }
 
     toggleFoo() {
-        this.hwService.toggleFoo();
+        this.helloWorldService.toggleFoo();
+    }
+
+    togglePeopleFoo() {
+        this.peopleService.toggleFoo();
     }
 
     updateText($event) {
         var text = $event.target.value;
-        this.hwService.updateText(text);
+        this.helloWorldService.updateText(text);
 
         if(text.length) {
             this.filteredGrid = this.grid.filter(row => JSON.stringify(row).toLowerCase().indexOf(text.toLowerCase()) > -1);

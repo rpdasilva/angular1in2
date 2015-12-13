@@ -1,6 +1,6 @@
 import {bootstrap, bind} from 'angular2/angular2';
 import {HTTP_PROVIDERS} from 'angular2/http';
-import {appNG1} from './core/upgrade-adapters';
+import {ng1App} from './core/upgrade-adapters';
 import {PeopleService} from './core/people.service';
 import {Grid} from './components/grid/grid';
 import helloWorld from './ng1/hello-world/hello-world.directive';
@@ -18,12 +18,15 @@ bootstrap(Grid, [
     window.ng.probe = inspectNativeElement;
 });
 
- var ng1App = window.angular.module('appNG1', ['ux'])
+ ng1App.app = window.angular.module('ng1App', ['ux'])
       .directive('helloWorld', helloWorld)
-      .directive('grid', appNG1.adapter.downgradeNg2Component(Grid))
+      .directive('grid', ng1App.adapter.downgradeNg2Component(Grid))
       .service('helloWorldService', HelloWorldService)
-      .service('peopleService', appNG1.adapter.downgradeNg2Provider(PeopleService))
+      .service('peopleService', ng1App.adapter.downgradeNg2Provider(PeopleService))
       .run(() => console.info('Angular', window.angular.version.full, 'loaded'));
 
-appNG1.app = ng1App;
-appNG1.adapter.bootstrap(document, ['appNG1']);
+ng1App.adapter.upgradeNg1Provider('helloWorldService');
+ng1App.adapter.addProvider(HTTP_PROVIDERS);
+ng1App.adapter.addProvider(PeopleService);
+ng1App.adapter.addProvider(PeopleService);
+ng1App.adapter.bootstrap(document, ['ng1App']);
