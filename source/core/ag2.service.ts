@@ -2,7 +2,7 @@ import {Injectable} from 'angular2/angular2';
 import {Http} from 'angular2/http';
 
 @Injectable()
-export class PeopleService {
+export class Ag2Service {
     people: any;
 
     constructor(private http: Http) {
@@ -10,22 +10,22 @@ export class PeopleService {
         this.store = {
             foo: true
         };
-        console.log('PeopleService constructed');
+        console.log('Ag2Service constructed');
     }
 
     getPeople() {
         return this.people;
     }
 
-    logPeople() {
-        console.log('Hi People!');
+    logAg2() {
+        console.log('Hi from Ag2Service!');
     }
 
     getStore() {
         return this.store;
     }
 
-    toggleFoo(value: string) {
+    toggleAg2Foo() {
         this.store.foo = !this.store.foo;
     }
 }

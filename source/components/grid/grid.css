@@ -1,0 +1,25 @@
+.grid-container {
+	padding: 1em;
+	border: 1px solid #000;
+}
+
+.grid-container > h1:first-of-type {
+	margin-top: 0;
+}
+
+.grid-header {
+	width: 100%;
+	padding: 0.25em;
+	background-color: #EEE;
+}
+
+.grid {
+	height: 200px;
+	overflow-x: hidden;
+}
+
+.grid-ng1 {
+	margin-top: 1em;
+	padding: 1em;
+	border: 1px solid #000;
+}

@@ -1,0 +1,19 @@
+<div>
+    <h1 style="margin-top: 0">Angular 1: {{ag1Ctrl.message}}</h1>
+    <h2>Rendered with: UX Datagrid</h2>
+    <h3>
+        Ag1 Foo: {{ag1Ctrl.ag1Store.foo}}
+        <button ng-click="ag1Ctrl.toggleAg1Foo()">toggleAg1Foo</button>
+        Ag2 Foo: {{ag1Ctrl.ag2Store.foo}}
+        <button ng-click="ag1Ctrl.toggleAg2Foo()">toggleAg2Foo</button>
+        {{ag1Ctrl.ag1Store.filterText}}:
+        Grid Length {{ag1Ctrl.grid.length}}
+    </h3>
+    <div style="display: table; width: 100%; font-weight: 700; padding: 0.25em; background-color: #EEE">
+      <span ng-repeat="header in ag1Ctrl.gridHeaders" style="display: table-cell; padding: 0 5px;">{{header}}</span>
+      <button ng-click="ag1Ctrl.reverseOrder()">Reverse Order</button>
+    </div>
+    <div ux-datagrid="ag1Ctrl.grid"
+        style="height: 200px; overflow-x: hidden;"
+        data-options="{templateModel:{templates:ag1Ctrl.templates}}"></div>
+</div>
