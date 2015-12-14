@@ -7,8 +7,9 @@
             <button (click)="toggleAg1Foo()">toggleAg1Foo</button>
             Ag2 Foo: {{ag2Store.foo}}
             <button (click)="toggleAg2Foo()">toggleAg2Foo</button>
+            <br>
             <input (keyup)="updateFilterText($event)" value="{{ag1Store.text}}" placeholder="Filter">
-            <span>{{ag1Store.filterText}}:</span>
+            <span>Filtering: {{ag1Store.filterText || 'N/A'}} -</span>
             <span>Grid Length {{filteredGrid ? filteredGrid.length : 0}}</span>
         </h3>
         <table class="grid-header">

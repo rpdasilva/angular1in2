@@ -6,7 +6,8 @@
         <button ng-click="ag1Ctrl.toggleAg1Foo()">toggleAg1Foo</button>
         Ag2 Foo: {{ag1Ctrl.ag2Store.foo}}
         <button ng-click="ag1Ctrl.toggleAg2Foo()">toggleAg2Foo</button>
-        {{ag1Ctrl.ag1Store.filterText}}:
+        <br>
+        Filtering: {{ag1Ctrl.ag1Store.filterText || 'N/A'}} -
         Grid Length {{ag1Ctrl.grid.length}}
     </h3>
     <div style="display: table; width: 100%; font-weight: 700; padding: 0.25em; background-color: #EEE">
