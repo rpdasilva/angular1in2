@@ -3,18 +3,15 @@ import {Http} from 'angular2/http';
 
 @Injectable()
 export class Ag2Service {
-    people: any;
+    store: any;
 
     constructor(private http: Http) {
-        this.people = this.http.get('/mocks/people.json');
         this.store = {
-            foo: true
+            foo: true,
+            people: this.http.get('/mocks/people.json')
         };
-        console.log('Ag2Service constructed');
-    }
 
-    getPeople() {
-        return this.people;
+        console.log('Ag2Service constructed');
     }
 
     logAg2() {

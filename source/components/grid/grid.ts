@@ -24,7 +24,7 @@ export class Grid {
         this.ag1Store = this.ag1Service.getStore();
         this.ag2Store = this.ag2Service.getStore();
 
-        ag2Service.getPeople()
+        this.ag2Store.people
             .map((res: any) => res.json())
             .subscribe((data: any) => {
                 this.gridHeaders = Object.keys(data[0]);
