@@ -1,4 +1,4 @@
-import {Component, Inject} from 'angular2/angular2';
+import {Component, Inject} from 'angular2/core';
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {ng1AppAdapter} from '../../core/ng-upgrade-adapters';
 import {Ag2Service} from '../../core/ag2.service';

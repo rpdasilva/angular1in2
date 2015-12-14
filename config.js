@@ -21,7 +21,7 @@ System.config({
   },
 
   meta: {
-    "angular2/angular2": {
+    "angular2/bootstrap": {
       "deps": [
         "reflect-metadata",
         "zone.js",
@@ -33,7 +33,7 @@ System.config({
 
   map: {
     "angular": "npm:angular@1.4.8",
-    "angular2": "npm:angular2@2.0.0-alpha.52",
+    "angular2": "npm:angular2@2.0.0-alpha.53",
     "es6-shim": "github:es-shims/es6-shim@0.33.6",
     "obogo/ux-angularjs-datagrid": "github:obogo/ux-angularjs-datagrid@1.4.5",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
@@ -95,7 +95,7 @@ System.config({
       "module": "github:jspm/nodelibs-module@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:angular2@2.0.0-alpha.52": {
+    "npm:angular2@2.0.0-alpha.53": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "es6-promise": "npm:es6-promise@3.0.2",
       "es6-shim": "npm:es6-shim@0.33.13",

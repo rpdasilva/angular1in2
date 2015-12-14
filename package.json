@@ -10,7 +10,7 @@
   "jspm": {
     "dependencies": {
       "angular": "npm:angular@^1.4.8",
-      "angular2": "npm:angular2@2.0.0-alpha.52",
+      "angular2": "npm:angular2@2.0.0-alpha.53",
       "es6-shim": "github:es-shims/es6-shim@^0.33.6",
       "obogo/ux-angularjs-datagrid": "github:obogo/ux-angularjs-datagrid@^1.4.5",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
