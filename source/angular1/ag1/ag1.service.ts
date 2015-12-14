@@ -19,4 +19,8 @@ export class Ag1Service {
     toggleAg1Foo() {
         this.store.foo = !this.store.foo;
     }
+    
+    updateFilterText(text: string) {
+        this.store.filterText = text;
+    }
 }
